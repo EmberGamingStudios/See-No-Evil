@@ -38,3 +38,7 @@ label start:
     pause 5.0
     scene disclaimer 2 with dissolve
     pause 5.0
+    scene unix 1
+    pause 1.0
+    scene glitch 1 with dissolve
+    pause
