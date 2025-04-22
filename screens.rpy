@@ -257,7 +257,7 @@ screen quick_menu():
             textbutton _("Save") action ShowMenu('save')
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("Menu") action ShowMenu('Settings')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -308,7 +308,7 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Settings") action ShowMenu("Settings")
 
         if _in_replay:
 
@@ -722,18 +722,18 @@ style slot_button_text:
     properties gui.text_properties("slot_button")
 
 
-## Preferences screen ##########################################################
+## Settings screen ##########################################################
 ##
-## The preferences screen allows the player to configure the game to better suit
+## The Settings screen allows the player to configure the game to better suit
 ## themselves.
 ##
-## https://www.renpy.org/doc/html/screen_special.html#preferences
+## https://www.renpy.org/doc/html/screen_special.html#Settings
 
-screen preferences():
+screen Settings():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Settings"), scroll="viewport"):
 
         vbox:
 
@@ -756,7 +756,7 @@ screen preferences():
                     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
+                ## added here, to add additional creator-defined Settings.
 
             null height (4 * gui.pref_spacing)
 
