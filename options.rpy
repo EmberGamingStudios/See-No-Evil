@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("INDEV Build")
+define config.name = _("Murder Drones See No Evil")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "0.01"
+define config.version = "INDEV Build\n0.01"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "MurderDronesSeeNoEvil"
+define build.name = "SeeNoEvil"
 
 
 ## Sounds and music ############################################################
@@ -62,7 +62,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-define config.main_menu_music = "Eternal DESTROYER.mp3"
+# define config.main_menu_music = "main-menu-theme.ogg"
 
 
 ## Transitions #################################################################
@@ -143,7 +143,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "MurderDronesSudo-1733244123"
+define config.save_directory = "SeeNoEvil-1746796377"
 
 
 ## Icon ########################################################################

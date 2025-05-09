@@ -25,8 +25,7 @@ define config.check_conflicting_properties = True
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-#define gui.accent_color = '#cccc00'
-define gui.accent_color = '#ffff00'
+define gui.accent_color = '#cccc00'
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#888888'
@@ -51,7 +50,7 @@ define gui.muted_color = '#515100'
 define gui.hover_muted_color = '#7a7a00'
 
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = '#ffff00'
+define gui.text_color = '#ffffff'
 define gui.interface_text_color = '#ffffff'
 
 
@@ -328,8 +327,8 @@ define gui.vbar_borders = Borders(6, 6, 6, 6)
 define gui.vscrollbar_borders = Borders(6, 6, 6, 6)
 define gui.vslider_borders = Borders(6, 6, 6, 6)
 
-## What to do with unscrollable scrollbars in the gui. "hide" hides them, while
-## None shows them.
+## What to do with unscrollable scrollbars in the game menu. "hide" hides them,
+## while None shows them.
 define gui.unscrollable = "hide"
 
 

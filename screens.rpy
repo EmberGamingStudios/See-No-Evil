@@ -96,7 +96,6 @@ style frame:
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen say(who, what):
-    style_prefix "say"
 
     window:
         id "window"
@@ -226,7 +225,6 @@ style choice_vbox:
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
-    activate_sound "ding.mp3"
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
@@ -248,7 +246,7 @@ screen quick_menu():
             style_prefix "quick"
 
             xalign 0.5
-            yalign 1.0
+            yalign 0.99
 
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
@@ -257,7 +255,7 @@ screen quick_menu():
             textbutton _("Save") action ShowMenu('save')
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Menu") action ShowMenu('Settings')
+            textbutton _("Menu") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -308,7 +306,7 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Settings") action ShowMenu("Settings")
+        textbutton _("Settings") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -369,8 +367,8 @@ screen main_menu():
         vbox:
             style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
+            #text "[config.name!t]":
+            #    style "main_menu_title"
 
             text "[config.version]":
                 style "main_menu_version"
@@ -398,11 +396,11 @@ style main_menu_vbox:
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
 
-#style main_menu_title:
-    #properties gui.text_properties("title")
+style main_menu_title:
+    properties gui.text_properties("title")
 
-#style main_menu_version:
-    #properties gui.text_properties("version")
+style main_menu_version:
+    properties gui.text_properties("version")
 
 
 ## Game Menu screen ############################################################
@@ -558,14 +556,13 @@ screen about():
         vbox:
 
             label "[config.name!t]"
-            text _("Version [config.version!t]\n\nCreated by {a=https://github.com/EmberGamingStudios}EmberGamingStudios\n")
+            text _("Version [config.version!t]\n")
 
             ## gui.about is usually set in options.rpy.
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]\n\n{a=https://embergamingstudios.itch.io/murder-drones-sudo}Game Page\n\n{a=https://github.com/EmberGamingStudios/MD-Sudo}Source Code\n\n{a=https://www.glitchprod.com/}Based on Murder Drones by GLITCH Productions and Liam Vickers.\n\n{a=https://github.com/EmberGamingStudios/MD-Sudo/blob/main/CREDITS}Full Credits")
-
+            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 style about_label is gui_label
@@ -722,14 +719,14 @@ style slot_button_text:
     properties gui.text_properties("slot_button")
 
 
-## Settings screen ##########################################################
+## Preferences screen ##########################################################
 ##
-## The Settings screen allows the player to configure the game to better suit
+## The preferences screen allows the player to configure the game to better suit
 ## themselves.
 ##
-## https://www.renpy.org/doc/html/screen_special.html#Settings
+## https://www.renpy.org/doc/html/screen_special.html#preferences
 
-screen Settings():
+screen preferences():
 
     tag menu
 
@@ -756,7 +753,7 @@ screen Settings():
                     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined Settings.
+                ## added here, to add additional creator-defined preferences.
 
             null height (4 * gui.pref_spacing)
 
@@ -1612,15 +1609,3 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
-
-# screens.rpy
-screen movable_windows_screen():
-    window:
-        style "window"
-        xysize (640, 480)
-        # We could add a background or any other style properties here.
-
-
-
-
-
